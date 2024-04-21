@@ -4,16 +4,12 @@ import Authenticate from "./components/Authenticate";
 import SignUpForm from "./components/SignUpForm";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [token, setToken] = useState(null);
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <SignUpForm token={token} setToken={setToken} />
+      <Authenticate token={token} setToken={setToken} />
     </>
   );
 }
